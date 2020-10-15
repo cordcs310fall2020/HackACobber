@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Forgot Password Page</title>
+<?php
+ $page_title = "Forgot Password Page";
+ include($_SERVER['DOCUMENT_ROOT'].'/components/head.php');
+?>
 </head>
 <body>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/components/nav.php');?>
+<h1>Forgot Password</h1>
 </body>
 </html>

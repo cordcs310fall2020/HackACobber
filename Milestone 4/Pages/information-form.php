@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Information Form Page</title>
+<?php
+ $page_title = "Information Page";
+ include($_SERVER['DOCUMENT_ROOT'].'/components/head.php');
+?>
 </head>
 <body>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/components/nav.php');?>
+<h1>Information Form</h1>
 </body>
 </html>
