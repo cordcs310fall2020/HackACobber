@@ -1,0 +1,45 @@
+form, .content {
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid rgba(255, 180, 40, 0.678);
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+.input-group {
+	margin: 10px 0px 10px 0px;
+}
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 3px;
+}
+.input-group label.inline, label.inline {
+	display: inline-block;
+}
+.input-group input {
+	height: 30px;
+	width: 93%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.input-group input[type="radio"],.input-group input.checkbox {
+	height: 17px;
+    width: 30px;
+}
+form .btn{
+	width: 80%;
+} 
+div.form_header {
+	width: 40%;
+	margin: 50px auto 0px;
+	color: white;
+	background: orange;
+	text-align: center;
+	border: 1px solid #B0C4DE;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
