@@ -47,7 +47,7 @@ if (isset($_SESSION['user'])) {
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Request Access from Dr.</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Request Access from Dr. Rod Oppegard</h3></div>
                                     <div class="card-body"><?PHP include_once('section/userdatabasescript.php');  ?>
                                         <form name="signup_form" action="signup.php" method="post">
                                         <?PHP include_once('section/error-alert.php');  ?>

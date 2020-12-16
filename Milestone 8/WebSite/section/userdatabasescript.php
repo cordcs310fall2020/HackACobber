@@ -25,7 +25,7 @@ include_once('dlinks.php');
             if ($stmt->execute()) {
                 $result = $stmt->get_result();
                 $user = $result->fetch_assoc();
-                if (password_verify($password, $user['password'])) { // if password matches
+                if (password_verify($password, $user['password'])) { 
                     $stmt->close();
                     $_SESSION['user'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
@@ -38,16 +38,16 @@ include_once('dlinks.php');
                     $_SESSION['type'] = 'alert-success';
                     if ( in_array($_SESSION['user']['role'] == 1)) {
                         $_SESSION['message'] = "You are now logged in";
-                        // redirect to admin area
+                      
                         header($headerlocation .$actual_admin_link);
                         exit(0);
                     } else {
                         $_SESSION['message'] = "You are now logged in";
-                        // redirect to public area
+                        
                         header($headerlocation .$actual_default_link);				
                         exit(0);
                     }
-                } else { // if password does not match
+                } else { 
                     $errors['login_fail'] = "Wrong username or password";
                 }
             } else {
@@ -65,8 +65,8 @@ include_once('dlinks.php');
         $lastname = $_POST['lastname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $token = bin2hex(random_bytes(80)); // generate unique token
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT); //encrypt password
+        $token = bin2hex(random_bytes(80)); 
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
         $state ="";
         $country = "" ; 
         $address = "" ;
@@ -117,17 +117,8 @@ include_once('dlinks.php');
             VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$address', '$state', '$postal_code', '$country', '$phone', '$position', '$role', '$verified', '$token', '$profile_pic', now(), now())";
             mysqli_query($dbco, $query);
 
-			// get id of created user
 			$result = mysqli_insert_id($dbco); 
-
-			// put logged in user into session array
-    
             if ($result) {
-    
-                // TO DO: send verification email to user
-                // sendVerificationEmail($email, $token);
-    
-                
 			    $_SESSION['user'] = getUserById($result);
                 $_SESSION['username'] = $username;
                 $_SESSION['email'] = $email;
@@ -152,14 +143,8 @@ include_once('dlinks.php');
 		return $user; 
     }
     
-
-    /*
-  Accept email of user whose password is to be reset
-  Send email to user to reset their password
-*/
 if (isset($_POST['submit_reset_password'])) {
     $email = mysqli_real_escape_string($dbco, $_POST['email']);
-    // ensure that the user exists on our system
     $query = "SELECT email FROM user_table WHERE email='$email'";
     $results = mysqli_query($dbco, $query);
   
@@ -168,15 +153,12 @@ if (isset($_POST['submit_reset_password'])) {
     }else if(mysqli_num_rows($results) <= 0) {
       array_push($errors, "Sorry, no user exists on our system with that email");
     }
-    // generate a unique random token of length 100
     $token = bin2hex(random_bytes(80));
   
-    if (count($errors) == 0) {
-      // store token in the password-reset database table against the user's email
+    if (empty($errors)) {
       $sql = "INSERT INTO user_table (email, token) VALUES ('$email', '$token')";
       $results = mysqli_query($dbco, $sql);
   
-      // Send email to user with the token in a link they can click on
       $to = $email;
       $subject = "Reset your password on churchdatabase.org";
       $msg = "Hi Member of the ChurchDatabase, click on this <a href=\"newpassword.php?token=" . $token . "\">link</a> to reset your password on our site";
@@ -187,21 +169,17 @@ if (isset($_POST['submit_reset_password'])) {
     }
   }
   
-  // ENTER A NEW PASSWORD
   if (isset($_POST['submit_new_password'])) {
     $newpassword = mysqli_real_escape_string($db, $_POST['newpassword']);
     $newpasswordvalidation = mysqli_real_escape_string($db, $_POST['newpasswordvalidation']);
   
-    // Grab to token that came from the email link
     $token = $_SESSION['token'];
     if (empty($newpassword) || empty($newpasswordvalidation)) array_push($errors, "Password is required");
     if ($newpassword !== $newpasswordvalidation) array_push($errors, "Password do not match");
     if (count($errors) == 0) {
-      // select email address of user from the password_reset table 
       $sql = "SELECT email FROM user_table WHERE token='$token' LIMIT 1";
       $results = mysqli_query($dbco, $sql);
       $email = mysqli_fetch_assoc($results)['email'];
-  
       if ($email) {
         $newpassword = md5($newpassword);
         $sql = "UPDATE user_table SET password='$newpassword' WHERE email='$email'";

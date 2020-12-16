@@ -11,7 +11,7 @@
 						<th scope="col">Title</th>
 						<th scope="col">Views</th>
 						<?php if ($_SESSION['role'] == 1): ?>
-							<th scope="col"><small>Publish</small></th>
+							<th scope="col"><small>Visible</small></th>
 						<?php endif ?>
 						<th scope="col"><small>Edit</small></th>
 						<th scope="col"><small>Delete</small></th>
@@ -53,4 +53,3 @@
 					</tbody>
 				</table>
 			<?php endif ?>
-		<!-- // Display records from DB -->

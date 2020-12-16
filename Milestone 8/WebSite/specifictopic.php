@@ -4,6 +4,8 @@ require_once( ROOT_PATH . '/section/functions.php');
 require_once( ROOT_PATH . '/section/dlinks.php');
 if (!(isset($_SESSION['user']) && $_SESSION['user'] != '')) {header ("Location: login.php");}
 if (isset($_SESSION['verified']) && $_SESSION['verified'] != 1){header ("Location: notverified.php");} 
+$page_title = "Data";
+$churchadminpage = 'data';
 ?>
 
 <?php 

@@ -13,7 +13,7 @@ if (isset($_SESSION['user'])) { if ($_SESSION['role'] != 1) {	header($headerloca
   <div style="align-content: center;max-width: 600px;" class="container">
     <div class="card">
       <div class="card-header">
-<h1 class="h2 text-center font-weight-bold">Create and Edit Posts</h1></div>
+<h1 class="h2 text-center font-weight-bold">Create and Edit Data</h1></div>
 
         
 <?php include_once('content/createpost.php');  ?></div></div></div>

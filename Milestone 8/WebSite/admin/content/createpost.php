@@ -32,21 +32,21 @@
 					<?php if ($published == true): ?>
 					<div class="custom-control custom-checkbox">
 					<input type="checkbox" class="custom-control-input" value="1" name="publish" id="publish" checked="checked">
-					<label class="custom-control-label" for="publish">Publish</label>
+					<label class="custom-control-label" for="publish">Visible</label>
 					</div>
 					<?php else: ?>
 					<div class="custom-control custom-checkbox">
 					<input type="checkbox" class="custom-control-input" value="1" name="publish" id="publish">
-					<label class="custom-control-label" for="publish">Publish</label>
+					<label class="custom-control-label" for="publish">Hidden</label>
 					</div>
 					<?php endif ?>
 					</div></div>
 					
 				<div class="mb-2">
 				<?php if ($isEditingPost === true): ?> 
-					<button type="submit" class="btn btn-outline-success btn-lg btn-block" name="update_post">Update Post</button>
+					<button type="submit" class="btn btn-outline-success btn-lg btn-block" name="update_post">Update Data</button>
 				<?php else: ?>
-					<button type="submit" class="btn btn-outline-primary btn-lg btn-block" name="create_post">Save Post</button>
+					<button type="submit" class="btn btn-outline-primary btn-lg btn-block" name="create_post">Save Data</button>
 				<?php endif ?>
 				</div>
 

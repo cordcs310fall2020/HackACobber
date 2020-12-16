@@ -82,7 +82,7 @@ if ($churchadminpage == 'dashboard'){
           <li class="nav-item">
             <a class="nav-link <?php echo $usermenu7;?>" href="<?php echo $actual_link .'/admin/createpost.php'?>">
               <span data-feather="file-text"></span>
-              Create Post
+              Create Data
             </a>
           </li>
         </ul>

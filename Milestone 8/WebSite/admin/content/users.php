@@ -1,5 +1,4 @@
 <div style="margin-top:20px;" class="row">
-<!-- Display notification message -->
 <?php include(ROOT_PATH.'/section/error-alert.php') ?>
 
 <?php if (empty($users)): ?>
@@ -76,4 +75,3 @@
 	</table>
 <?php endif ?>
 </div>
-<!-- // Display records from DB -->

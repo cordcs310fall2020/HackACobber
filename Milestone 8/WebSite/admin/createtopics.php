@@ -6,7 +6,6 @@ $page_title = "Create Topics";
 $churchadminpage = 'createtopics';
 if (isset($_SESSION['user'])) { if ($_SESSION['role'] != 1) {	header($headerlocation .$actual_link);	}}else{header($headerlocation .$actual_login_link);}
 ?>
-<!-- Get all topics from DB -->
 <?php $topics = getAllTopics();	?>
 
 <?php include_once('section/admin-header.php')?>

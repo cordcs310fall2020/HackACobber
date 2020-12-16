@@ -89,9 +89,13 @@
 				<div class="row">
 				<div class="col-md-6 mb-2">
 				<select class="custom-select d-block" name="role">
+					<?php if($role !=0 && $role != 1):?>
 					<option value="" selected disabled>Assign role</option>
-					<option value="0">Member</option>
-					<option value="1">Admin</option>
+					<?php endif?>
+					<?php if($user_id != 1 && $role != 1):?>
+					<option value="0" <?php if(empty($role)){ echo "selected";}?>>Member</option>
+					<?php endif?>
+					<option value="1" <?php if($role == 1 ){ echo "selected";}?>>Admin</option>
 				</select></div>
 				<div class="col-md-6 mb-2">
 				<select class="custom-select d-block" name="position">

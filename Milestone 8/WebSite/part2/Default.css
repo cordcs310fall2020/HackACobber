@@ -1,0 +1,48 @@
+body{
+    background-color:grey;
+    font-family:helvetica;
+    
+}
+
+a:link{
+    color: #01A1FE;
+    text-decoration: none;
+}
+.grid-Container{
+    
+    display: grid;
+    grid-template-columns: 0.5fr 3.5fr 5.5fr 0.5fr;
+    grid-auto-rows: 100%;
+    grid-gap:20px;
+} 
+.identifier{
+    background-color:white;
+    border: 10px solid white;
+    border-radius: 12px;
+    text-align:center;
+}
+#nav{
+    background-color:red;
+    display:flex;
+}
+.grid-item-2{
+    background-color:White;
+    border:5px;
+    border-radius:10px;
+    display: grid;
+    grid-template-columns: 10% 80%;
+    grid-template-rows:10% 80%;
+}
+.grid-item-1{
+    grid-column-start:2;
+}
+#description{
+    grid-column-start:2;
+    grid-row-start:2;
+}
+#description-header{
+    Grid-column-start:2;
+    justify-self:center;
+    
+}
+
