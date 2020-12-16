@@ -1,0 +1,7 @@
+CREATE TABLE `post_topic_table` (
+ `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `post_id` int(11) NOT NULL UNIQUE,
+ `topic_id` int(11) NOT NULL,
+  FOREIGN KEY (`post_id`) REFERENCES `posts_table` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`topic_id`) REFERENCES `topics_table` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci AUTO_INCREMENT=1 ;

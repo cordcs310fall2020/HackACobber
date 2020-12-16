@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `user_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `lastname` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_general_mysql500_ci NULL,
+  `state` varchar(2) COLLATE utf8_general_mysql500_ci NULL,
+  `postal_code` varchar(50) COLLATE utf8_general_mysql500_ci NULL,
+  `country` varchar(50) COLLATE utf8_general_mysql500_ci NULL,
+  `phone` varchar(50) COLLATE utf8_general_mysql500_ci NULL,
+  `position` varchar(20) COLLATE utf8_general_mysql500_ci NULL,
+  `role` tinyint(1) NOT NULL DEFAULT '0',
+  `verified` tinyint(1) NOT NULL DEFAULT '0',
+  `token` varchar(255) DEFAULT NULL,
+  `profile_pic` varchar(255) COLLATE utf8_general_mysql500_ci DEFAULT NULL,
+  `signup_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci AUTO_INCREMENT=1 ;
